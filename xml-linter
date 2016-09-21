@@ -14,9 +14,9 @@ use Symfony\Component\Config\Util\XmlUtils;
 
 (new Application('xml-linter', '1.0.0'))
   ->register('xml-linter')
-      ->setDescription('Validate an XML file and outputs encountered errors')
+      ->setDescription('Validate a path or a XML file and outputs encountered errors')
       ->addArgument('path', InputArgument::REQUIRED, 'Filename or a directory')
-      ->addOption('xsd', null, InputOption::VALUE_REQUIRED, 'Path of the xsd definition')
+      ->addOption('xsd', null, InputOption::VALUE_REQUIRED, 'Path of the xsd definition file')
       ->setCode(function(InputInterface $input, OutputInterface $output) {
           $io = new SymfonyStyle($input, $output);
           $errors = 0;
