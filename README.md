@@ -8,7 +8,7 @@ Lint any kind of XML file, can accept an XSD definition file.
 
 ![xml-linter-use](https://cloud.githubusercontent.com/assets/1247388/18693553/da1b82d2-7fa2-11e6-8633-88e8559c27ae.PNG)
 
-Or if you only want to copy paste an available test (if you have installed dev requirements):
+Some tests are available (requires `dev` dependencies):
 
 ```bash
 # Invalid file
@@ -18,7 +18,7 @@ $ ./xml-linter ./vendor/symfony/translation/Tests/fixtures/invalid-xml-resources
 $ ./xml-linter ./vendor/symfony/translation/Tests/fixtures/resources.xlf
 ```
 
-Also, if you install it as a dependency or your project the binary will automaticaly be located into ``vendors/bin``.
+Installing it as a dependency of your project will automatically move the binary ``vendors/bin`` folder.
 
 ## Contribute ?
 
