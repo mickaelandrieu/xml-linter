@@ -1,0 +1,26 @@
+{
+    "name": "mickaelandrieu/xml-linter",
+    "description": "CLI app to validate any kind of XML file, can accept an XSD definition file",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/console": "dev-master",
+        "symfony/config": "3.1.*",
+        "symfony/finder": "3.1.*"
+    },
+    "require-dev": {
+        "symfony/translation": "3.1.*",
+        "phpunit/phpunit": "5.5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mickaël Andrieu",
+            "email": "andrieu.travail@gmail.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    },
+    "bin": ["xml-linter"]
+}

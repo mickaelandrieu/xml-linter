@@ -1,0 +1,56 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Config\Util\XmlUtils;
+
+(new Application('xml-linter', '1.0.0'))
+  ->register('xml-linter')
+      ->setDescription('Validate an XML file and outputs encountered errors')
+      ->addArgument('path', InputArgument::REQUIRED, 'Filename or a directory')
+      ->addOption('xsd', null, InputOption::VALUE_REQUIRED, 'Path of the xsd definition')
+      ->setCode(function(InputInterface $input, OutputInterface $output) {
+          $io = new SymfonyStyle($input, $output);
+          $errors = 0;
+
+          $path = $input->getArgument('path');
+          $xsd = $input->getOption('xsd');
+
+          $validateFile = function ($filename, $xsd) use ($io, &$errors) {
+            try {
+              XmlUtils::loadFile($filename, $xsd);
+            }catch(\InvalidArgumentException $e) {
+                $io->error(sprintf('File %s : %s', $filename, $e->getMessage()));
+                $errors++;
+            }
+          };
+
+          if (is_dir($path)) {
+            $finder = new Finder();
+            foreach($finder->files()->in($path) as $file) {
+              $validateFile($file->getPathname(), $xsd);
+            } 
+          } elseif (is_file($path)) {
+            $validateFile($path, $xsd);
+          } else {
+            $io->error(sprintf('%s is not a valid file or path.', $path));
+            $errors++;
+          }
+          
+        if ($errors > 0) {
+          return 1;
+        }
+
+        $io->success('Validation OK');
+      })
+  ->getApplication()
+  ->setDefaultCommand('xml-linter', true)
+->run();

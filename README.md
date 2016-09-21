@@ -1,2 +1,2 @@
 # xml-linter
-Lint any kind of XML file, can accept an XSD definition file
+Lint any kind of XML file, can accept an XSD definition file.
