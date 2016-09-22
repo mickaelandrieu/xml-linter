@@ -3,6 +3,9 @@ Lint any kind of XML file, can accept an XSD definition file.
 
 ![xml-linter](https://cloud.githubusercontent.com/assets/1247388/18693510/77f596c4-7fa2-11e6-92d4-ed903a6e2412.PNG)
 
+## Install
+
+Available here and on [packagist](https://packagist.org/packages/mickaelandrieu/xml-linter)
 
 ## Usage
 
