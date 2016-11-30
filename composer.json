@@ -4,12 +4,12 @@
     "type": "library",
     "require": {
         "php": ">=5.5.9",
-        "symfony/console": "dev-master",
-        "symfony/config": "3.1.*",
-        "symfony/finder": "3.1.*"
+        "symfony/console": "3.2.*",
+        "symfony/config": "3.2.*",
+        "symfony/finder": "3.2.*"
     },
     "require-dev": {
-        "symfony/translation": "3.1.*",
+        "symfony/translation": "3.2.*",
         "phpunit/phpunit": "5.5.*"
     },
     "license": "MIT",
