@@ -15,7 +15,7 @@ Some tests are available (requires `dev` dependencies):
 
 ```bash
 # Invalid file
-$ ./xml-linter ./vendor/symfony/translation/Tests/fixtures/invalid-xml-resources.xlf
+$ ./xml-linter ./tests/malformed.xlf
 
 # Valid file
 $ ./xml-linter ./vendor/symfony/translation/Tests/fixtures/resources.xlf

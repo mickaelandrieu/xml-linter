@@ -24,11 +24,11 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Config\Util\XmlUtils;
 
 /**
- * @author Mickaël Andrieu <andrieu.travail@gmail.com>
+ * @author Mickaël Andrieu <mickael.andrieu@solvolabs.com>
  * 
  * Validate any XML file using XmlUtils::loadFile() function.
  */
-(new Application('xml-linter', '1.0.0'))
+(new Application('xml-linter', '2.0.0'))
   ->register('xml-linter')
       ->setDescription('Validate a path or a XML file and outputs encountered errors')
       ->addArgument('path', InputArgument::REQUIRED, 'Filename or a directory')
